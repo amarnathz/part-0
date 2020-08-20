@@ -1,0 +1,34 @@
+title Exercise 0.4:\nCreate a new note on page
+
+browser->server:HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+
+note over server:
+Server name is Cowboy
+Server send 302 Found status code with redirect the URL to "/notes "
+HTTP GET request to the address defined in the header's Location is /notes
+so it take "/notes"....
+'Failed to load response data' message in preview tab and
+form data is added to JSON file "data.json"  by server
+browser reload the Notes page
+end note
+
+server-->browser: HTTP status code 302: redirect to "/notes"
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+server-->browser: HTML-code
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+server-->browser: main.js
+
+note over browser:
+browser starts executing js-code
+that requests JSON data from server 
+end note
+
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server-->browser: server send data.json with also have new data added by user..
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note
