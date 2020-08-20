@@ -1,0 +1,30 @@
+title  Exercise 0.6: New note\nCreate a new note on page in SPA
+
+note over browser:
+when user click submit,
+Then Browser add newly added data to local array and display it with remaining data.
+end note
+
+note over browser:
+when user click submit,
+in spa.js calls sendToServer(notes)  //notes = user given data
+In XMLHttpRequest obj, we send Http Post "/new_note_spa" and also
+specified Content-type :application/json and send our new data in send().
+
+end note
+
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+
+
+
+note over server:
+server send user {"message":"note created"}  json file
+with ack the browser it worked well and 
+also stored the new data to data.json
+
+end note
+
+
+server-->browser: HTTP 201 Created: {"message":"note created"}
+
