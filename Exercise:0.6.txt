@@ -9,7 +9,7 @@ note over browser:
 when user click submit,
 in spa.js calls sendToServer(notes)  //notes = user given data
 In XMLHttpRequest obj, we send Http Post "/new_note_spa" and also
-specified Content-type :application/json and send our new data in send().
+specified Content-type :application/json and send our new data in JSON format in send().
 
 end note
 
@@ -27,4 +27,3 @@ end note
 
 
 server-->browser: HTTP 201 Created: {"message":"note created"}
-
